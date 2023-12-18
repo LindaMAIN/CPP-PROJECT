@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/zclem/Qt/6.6.1/gcc_64/include",
+                "/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets",
+                "/home/zclem/Qt/6.6.1/gcc_64/include/QtCore",
+                "/home/zclem/Documents/School/Language_Objet/Project_final/build-Test-Desktop_Qt_6_6_1_GCC_64bit-Debug",
+                "/home/zclem/Qt/6.6.1/gcc_64/include/QtGui"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "/home/zclem/Qt/6.6.1/gcc_64/include",
+                    "/home/zclem/Documents/School/Language_Objet/Project_final/build-Test-Desktop_Qt_6_6_1_GCC_64bit-Debug"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

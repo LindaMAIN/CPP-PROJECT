@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent)
     label = new QLabel(this);
     label->setPixmap(pix.scaled(500, 370, Qt::KeepAspectRatio));
     ui->verticalLayout->addWidget(label);
+    // Connect button to the function defined below
+    connect(ui->searchButton, &QPushButton::clicked, this, &MainWindow::on_searchButton_click);
 }
 
 MainWindow::~MainWindow()
@@ -28,9 +30,10 @@ MainWindow::~MainWindow()
 
 
 
-void MainWindow::on_submitButton_click(){
+void MainWindow::on_searchButton_click(){
     if(!ui->restaurantLineEdit ->text().isEmpty()){
         QPixmap pix(QDir::currentPath()+"/image/restaurant.jpeg");
         label->setPixmap(pix.scaled(500, 370, Qt::KeepAspectRatio));
+        label->repaint();
     }
 }

@@ -60,8 +60,87 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="pushButton">
+     <item row="1" column="0">
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Line 1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 7</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 7B</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 9</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 11</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 12</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 13</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line 14</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="searchButton">
        <property name="text">
         <string>Search</string>
        </property>

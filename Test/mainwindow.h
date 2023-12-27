@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void on_submitButton_click();
+    void on_searchButton_click();
 
 private:
     Ui::MainWindow *ui;

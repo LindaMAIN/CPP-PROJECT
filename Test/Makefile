@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Test1.0.0
-DISTDIR = /home/zclem/Documents/School/Language_Objet/Project_final/Test/.tmp/Test1.0.0
+DISTDIR = /home/zclem/Documents/School/Language_Objet/Project_final/CPP-PROJECT/Test/.tmp/Test1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath,/home/zclem/Qt/6.6.1/gcc_64/lib -Wl,-rpath-link,/home/zclem/Qt/6.6.1/gcc_64/lib
 LIBS          = $(SUBLIBS) /home/zclem/Qt/6.6.1/gcc_64/lib/libQt6Widgets.so /home/zclem/Qt/6.6.1/gcc_64/lib/libQt6Gui.so /home/zclem/Qt/6.6.1/gcc_64/lib/libQt6Core.so -lpthread -lGL   
@@ -790,7 +790,7 @@ moc_mainwindow.cpp: mainwindow.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h \
 		moc_predefs.h \
 		/home/zclem/Qt/6.6.1/gcc_64/libexec/moc
-	/home/zclem/Qt/6.6.1/gcc_64/libexec/moc $(DEFINES) --include /home/zclem/Documents/School/Language_Objet/Project_final/Test/moc_predefs.h -I/home/zclem/Qt/6.6.1/gcc_64/mkspecs/linux-g++ -I/home/zclem/Documents/School/Language_Objet/Project_final/Test -I/home/zclem/Qt/6.6.1/gcc_64/include -I/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets -I/home/zclem/Qt/6.6.1/gcc_64/include/QtGui -I/home/zclem/Qt/6.6.1/gcc_64/include/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+	/home/zclem/Qt/6.6.1/gcc_64/libexec/moc $(DEFINES) --include /home/zclem/Documents/School/Language_Objet/Project_final/CPP-PROJECT/Test/moc_predefs.h -I/home/zclem/Qt/6.6.1/gcc_64/mkspecs/linux-g++ -I/home/zclem/Documents/School/Language_Objet/Project_final/CPP-PROJECT/Test -I/home/zclem/Qt/6.6.1/gcc_64/include -I/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets -I/home/zclem/Qt/6.6.1/gcc_64/include/QtGui -I/home/zclem/Qt/6.6.1/gcc_64/include/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:

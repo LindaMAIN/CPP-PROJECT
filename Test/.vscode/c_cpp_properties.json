@@ -8,7 +8,8 @@
                 "/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets",
                 "/home/zclem/Qt/6.6.1/gcc_64/include/QtCore",
                 "/home/zclem/Documents/School/Language_Objet/Project_final/build-Test-Desktop_Qt_6_6_1_GCC_64bit-Debug",
-                "/home/zclem/Qt/6.6.1/gcc_64/include/QtGui"
+                "/home/zclem/Qt/6.6.1/gcc_64/include/QtGui",
+                "/home/zclem/Qt/6.6.1/gcc_64/include/QtObjects"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

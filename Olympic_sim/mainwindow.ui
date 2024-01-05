@@ -161,7 +161,7 @@ border-color: rgb(190, 183, 183);</string>
       <property name="geometry">
        <rect>
         <x>510</x>
-        <y>220</y>
+        <y>200</y>
         <width>113</width>
         <height>25</height>
        </rect>
@@ -177,7 +177,7 @@ border-color: rgb(190, 183, 183);</string>
       <property name="geometry">
        <rect>
         <x>510</x>
-        <y>250</y>
+        <y>230</y>
         <width>291</width>
         <height>188</height>
        </rect>
@@ -374,8 +374,8 @@ border-color: rgb(190, 183, 183);</string>
      <widget class="QPushButton" name="pushButton_Analyse">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>80</y>
+        <x>510</x>
+        <y>30</y>
         <width>251</width>
         <height>61</height>
        </rect>
@@ -383,6 +383,45 @@ border-color: rgb(190, 183, 183);</string>
       <property name="text">
        <string>Deeper Analysis</string>
       </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_8">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>100</y>
+        <width>131</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Simulation panel</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>129</y>
+        <width>291</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>Start</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="text">
+          <string>End</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </widget>

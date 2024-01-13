@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>zones</class>
+ <widget class="QDialog" name="zones">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="windowTitle">
+   <string>ZONE</string>
+  </property>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

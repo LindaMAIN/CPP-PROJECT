@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -64,6 +65,11 @@ public:
     QVBoxLayout *verticalLayout_map;
     QLineEdit *line;
     QPushButton *pushButton_Analyse;
+    QLineEdit *lineEdit_8;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QStatusBar *statusbar;
@@ -129,11 +135,11 @@ public:
         mainpage->setStyleSheet(QString::fromUtf8("background-color:rgb(119, 118, 123)"));
         lineEdit_7 = new QLineEdit(mainpage);
         lineEdit_7->setObjectName("lineEdit_7");
-        lineEdit_7->setGeometry(QRect(510, 220, 113, 25));
+        lineEdit_7->setGeometry(QRect(510, 200, 113, 25));
         lineEdit_7->setReadOnly(true);
         formLayoutWidget_3 = new QWidget(mainpage);
         formLayoutWidget_3->setObjectName("formLayoutWidget_3");
-        formLayoutWidget_3->setGeometry(QRect(510, 250, 291, 188));
+        formLayoutWidget_3->setGeometry(QRect(510, 230, 291, 188));
         formSettings_5 = new QFormLayout(formLayoutWidget_3);
         formSettings_5->setObjectName("formSettings_5");
         formSettings_5->setContentsMargins(0, 0, 0, 0);
@@ -238,7 +244,26 @@ public:
 
         pushButton_Analyse = new QPushButton(mainpage);
         pushButton_Analyse->setObjectName("pushButton_Analyse");
-        pushButton_Analyse->setGeometry(QRect(520, 80, 251, 61));
+        pushButton_Analyse->setGeometry(QRect(510, 30, 251, 61));
+        lineEdit_8 = new QLineEdit(mainpage);
+        lineEdit_8->setObjectName("lineEdit_8");
+        lineEdit_8->setGeometry(QRect(510, 100, 131, 25));
+        horizontalLayoutWidget = new QWidget(mainpage);
+        horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
+        horizontalLayoutWidget->setGeometry(QRect(510, 129, 291, 61));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton_5 = new QPushButton(horizontalLayoutWidget);
+        pushButton_5->setObjectName("pushButton_5");
+
+        horizontalLayout->addWidget(pushButton_5);
+
+        pushButton_6 = new QPushButton(horizontalLayoutWidget);
+        pushButton_6->setObjectName("pushButton_6");
+
+        horizontalLayout->addWidget(pushButton_6);
+
         mainStackedWidget->addWidget(mainpage);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -305,6 +330,9 @@ public:
         lineEdit_2->setText(QCoreApplication::translate("MainWindow", "Temp d'attente cumul\303\251", nullptr));
         line->setText(QCoreApplication::translate("MainWindow", "MAP", nullptr));
         pushButton_Analyse->setText(QCoreApplication::translate("MainWindow", "Deeper Analysis", nullptr));
+        lineEdit_8->setText(QCoreApplication::translate("MainWindow", "Simulation panel", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
+        pushButton_6->setText(QCoreApplication::translate("MainWindow", "End", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 

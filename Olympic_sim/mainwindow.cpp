@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(settingsAction, &QAction::triggered, this, &MainWindow::showMainPage);
     connect(analyseAction, &QAction::triggered, this, &MainWindow::showAnalysePage);
     connect(overviewAction, &QAction::triggered, this, &MainWindow::showOverviewPage);
-
+//////
 }
 
 MainWindow::~MainWindow()

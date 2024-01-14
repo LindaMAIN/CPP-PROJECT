@@ -53,10 +53,14 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Olympic_sim/main.cpp \
-		../Olympic_sim/mainwindow.cpp moc_mainwindow.cpp
+		../Olympic_sim/mainwindow.cpp \
+		../Olympic_sim/zones.cpp moc_mainwindow.cpp \
+		moc_zones.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		moc_mainwindow.o
+		zones.o \
+		moc_mainwindow.o \
+		moc_zones.o
 DIST          = /home/zclem/Qt/6.6.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/zclem/Qt/6.6.1/gcc_64/mkspecs/common/unix.conf \
 		/home/zclem/Qt/6.6.1/gcc_64/mkspecs/common/linux.conf \
@@ -213,8 +217,10 @@ DIST          = /home/zclem/Qt/6.6.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/zclem/Qt/6.6.1/gcc_64/mkspecs/features/exceptions.prf \
 		/home/zclem/Qt/6.6.1/gcc_64/mkspecs/features/yacc.prf \
 		/home/zclem/Qt/6.6.1/gcc_64/mkspecs/features/lex.prf \
-		../Olympic_sim/Olympic_sim.pro ../Olympic_sim/mainwindow.h ../Olympic_sim/main.cpp \
-		../Olympic_sim/mainwindow.cpp
+		../Olympic_sim/Olympic_sim.pro ../Olympic_sim/mainwindow.h \
+		../Olympic_sim/zones.h ../Olympic_sim/main.cpp \
+		../Olympic_sim/mainwindow.cpp \
+		../Olympic_sim/zones.cpp
 QMAKE_TARGET  = Olympic_sim
 DESTDIR       = 
 TARGET        = Olympic_sim
@@ -562,8 +568,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/zclem/Qt/6.6.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Olympic_sim/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Olympic_sim/main.cpp ../Olympic_sim/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Olympic_sim/mainwindow.h ../Olympic_sim/zones.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Olympic_sim/main.cpp ../Olympic_sim/mainwindow.cpp ../Olympic_sim/zones.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Olympic_sim/mainwindow.ui $(DISTDIR)/
 
 
@@ -595,9 +601,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/zclem/Qt/6.6.1/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -fPIC -dM -E -o moc_predefs.h /home/zclem/Qt/6.6.1/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_zones.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_zones.cpp
 moc_mainwindow.cpp: ../Olympic_sim/mainwindow.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QMainWindow \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -762,9 +768,179 @@ moc_mainwindow.cpp: ../Olympic_sim/mainwindow.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QStackedWidget \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qstackedwidget.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
 		moc_predefs.h \
 		/home/zclem/Qt/6.6.1/gcc_64/libexec/moc
 	/home/zclem/Qt/6.6.1/gcc_64/libexec/moc $(DEFINES) --include /home/zclem/Documents/School/Language_Objet/Project_final/CPP-PROJECT/build-Olympic_sim-Desktop_Qt_6_6_1_GCC_64bit-Debug/moc_predefs.h -I/home/zclem/Qt/6.6.1/gcc_64/mkspecs/linux-g++ -I/home/zclem/Documents/School/Language_Objet/Project_final/CPP-PROJECT/Olympic_sim -I/home/zclem/Qt/6.6.1/gcc_64/include -I/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets -I/home/zclem/Qt/6.6.1/gcc_64/include/QtGui -I/home/zclem/Qt/6.6.1/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Olympic_sim/mainwindow.h -o moc_mainwindow.cpp
+
+moc_zones.cpp: ../Olympic_sim/zones.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QDialog \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qdialog.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qglobal.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtversionchecks.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtconfiginclude.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qconfig.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtcore-config.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtconfigmacros.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtcoreexports.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtdeprecationmarkers.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtpreprocessorsupport.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qassert.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtnoop.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtypes.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtversion.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtclasshelpermacros.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsysinfo.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qlogging.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qflags.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcompare_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qatomic.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qconstructormacros.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qdarwinhelpers.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qexceptionhandling.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qforeach.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qttypetraits.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qfunctionpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmalloc.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qminmax.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qnumeric.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qoverload.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qswap.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtenvironmentvariables.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtresource.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qttranslation.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qversiontagging.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtgui-config.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtguiexports.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qwidget.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qnamespace.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qobject.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstring.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qchar.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbytearray.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qrefcount.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qarraydata.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qpair.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qarraydataops.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qxptype_traits.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/q20functional.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/q20memory.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringfwd.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/q20type_traits.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringliteral.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qlatin1stringview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qanystringview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qlist.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qiterator.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringlist.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qalgorithms.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcoreevent.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmetatype.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcompare.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qdatastream.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qfloat16.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmath.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qiterable.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qscopeguard.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qobject_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbindingstorage.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmargins.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/q23utility.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qaction.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qkeysequence.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qicon.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsize.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpixmap.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qrect.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qpoint.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qcolor.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qrgb.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qrgba64.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qshareddata.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qimage.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpixelformat.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtransform.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpolygon.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qregion.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qline.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qvariant.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qdebug.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtextstream.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringconverter_base.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmap.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qset.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qhash.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpalette.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qbrush.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qfont.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qfontinfo.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qcursor.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qbitmap.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qevent.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qiodevice.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qurl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qeventpoint.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qvector2d.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qvectornd.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qinputdevice.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qscreen.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QList \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QObject \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QRect \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QSize \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QSizeF \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h \
+		moc_predefs.h \
+		/home/zclem/Qt/6.6.1/gcc_64/libexec/moc
+	/home/zclem/Qt/6.6.1/gcc_64/libexec/moc $(DEFINES) --include /home/zclem/Documents/School/Language_Objet/Project_final/CPP-PROJECT/build-Olympic_sim-Desktop_Qt_6_6_1_GCC_64bit-Debug/moc_predefs.h -I/home/zclem/Qt/6.6.1/gcc_64/mkspecs/linux-g++ -I/home/zclem/Documents/School/Language_Objet/Project_final/CPP-PROJECT/Olympic_sim -I/home/zclem/Qt/6.6.1/gcc_64/include -I/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets -I/home/zclem/Qt/6.6.1/gcc_64/include/QtGui -I/home/zclem/Qt/6.6.1/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Olympic_sim/zones.h -o moc_zones.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -951,6 +1127,9 @@ main.o: ../Olympic_sim/main.cpp ../Olympic_sim/mainwindow.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QStackedWidget \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qstackedwidget.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QApplication \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qapplication.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1139,11 +1318,257 @@ mainwindow.o: ../Olympic_sim/mainwindow.cpp ../Olympic_sim/mainwindow.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h \
 		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtabwidget.h \
-		ui_mainwindow.h
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QStackedWidget \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qstackedwidget.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
+		ui_mainwindow.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QVariant \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/QAction \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QApplication \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qapplication.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qeventloop.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qfuture.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmutex.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtsan_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qresultstore.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qthreadpool.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qthread.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qrunnable.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qexception.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qpromise.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qinputmethod.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qlocale.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qguiapplication_platform.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QComboBox \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qvalidator.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qregularexpression.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qslider.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qstyle.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QFormLayout \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qformlayout.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QLayout \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qlayout.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QLabel \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qlabel.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpicture.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QLineEdit \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtextcursor.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtextformat.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpen.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtextoption.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QMenu \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qmenu.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QMenuBar \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QPlainTextEdit \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtextlayout.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qglyphrun.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qrawfont.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qfontdatabase.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QPushButton \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QStatusBar \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Olympic_sim/mainwindow.cpp
+
+zones.o: ../Olympic_sim/zones.cpp ../Olympic_sim/zones.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/QDialog \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qdialog.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qglobal.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtversionchecks.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtconfiginclude.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qconfig.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtcore-config.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtconfigmacros.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtcoreexports.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtdeprecationmarkers.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtpreprocessorsupport.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qassert.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtnoop.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtypes.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtversion.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtclasshelpermacros.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsysinfo.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qlogging.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qflags.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcompare_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qatomic.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qconstructormacros.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qdarwinhelpers.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qexceptionhandling.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qforeach.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qttypetraits.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qfunctionpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmalloc.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qminmax.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qnumeric.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qoverload.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qswap.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtenvironmentvariables.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtresource.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qttranslation.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qversiontagging.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtgui-config.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtguiexports.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qwidget.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qnamespace.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qobject.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstring.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qchar.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbytearray.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qrefcount.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qarraydata.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qpair.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qarraydataops.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qxptype_traits.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/q20functional.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/q20memory.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringfwd.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/q20type_traits.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringliteral.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qlatin1stringview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qanystringview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qlist.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qiterator.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringlist.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qalgorithms.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcoreevent.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmetatype.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcompare.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qdatastream.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qfloat16.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmath.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qiterable.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qscopeguard.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qobject_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qbindingstorage.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmargins.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/q23utility.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qaction.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qkeysequence.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qicon.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsize.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpixmap.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qrect.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qpoint.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qcolor.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qrgb.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qrgba64.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qshareddata.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qimage.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpixelformat.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qtransform.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpolygon.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qregion.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qline.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qvariant.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qdebug.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qtextstream.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qstringconverter_base.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qmap.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qset.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qhash.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpalette.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qbrush.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qfont.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qfontinfo.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qcursor.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qbitmap.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qevent.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qiodevice.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qpointer.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qurl.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qeventpoint.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qvector2d.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qvectornd.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qinputdevice.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/qscreen.h \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QList \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QObject \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QRect \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QSize \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/QSizeF \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtGui/QTransform \
+		/home/zclem/Qt/6.6.1/gcc_64/include/QtCore/qnativeinterface.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o zones.o ../Olympic_sim/zones.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_zones.o: moc_zones.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_zones.o moc_zones.cpp
 
 ####### Install
 

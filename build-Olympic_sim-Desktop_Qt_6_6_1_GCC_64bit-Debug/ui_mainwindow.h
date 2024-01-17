@@ -132,8 +132,7 @@ public:
         mainStackedWidget->addWidget(analyse);
         mainpage = new QWidget();
         mainpage->setObjectName("mainpage");
-        mainpage->setStyleSheet(QString::fromUtf8("\n"
-"background-color: rgb(255, 255, 255);"));
+        mainpage->setStyleSheet(QString::fromUtf8("background-color: rgb(119, 118, 123);"));
         lineEdit_7 = new QLineEdit(mainpage);
         lineEdit_7->setObjectName("lineEdit_7");
         lineEdit_7->setGeometry(QRect(510, 200, 113, 25));

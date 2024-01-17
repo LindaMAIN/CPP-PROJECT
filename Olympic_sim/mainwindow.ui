@@ -155,8 +155,7 @@ border-color: rgb(190, 183, 183);</string>
     </widget>
     <widget class="QWidget" name="mainpage">
      <property name="styleSheet">
-      <string notr="true">
-background-color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(119, 118, 123);</string>
      </property>
      <widget class="QLineEdit" name="lineEdit_7">
       <property name="geometry">

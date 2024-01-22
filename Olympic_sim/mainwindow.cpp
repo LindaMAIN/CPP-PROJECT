@@ -1,12 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QPixmap>
-#include <QLabel>
-#include <QDir>
+#include <QtGui/QPixmap>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QVBoxLayout>
+#include <QtCore/QDir>
+#include <QtDebug>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
-      ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     mainStackedWidget = ui->mainStackedWidget;
@@ -29,7 +33,11 @@ MainWindow::MainWindow(QWidget *parent)
         mapLabel->setPixmap(pix);
 
         // Add the QLabel to your layout
-        ui->verticalLayout_map->addWidget(mapLabel);
+        QVBoxLayout *layout = new QVBoxLayout;
+        layout->addWidget(mapLabel);
+        ui->verticalLayout_map->addLayout(layout);
+
+
     }
 
     // Create an action with the menu

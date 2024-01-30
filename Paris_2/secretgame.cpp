@@ -40,7 +40,7 @@ void secretgame::on_okButton_clicked()
         close();
     }
 }
-
+/*
 void arrondissement::goToMainWindow()
 {
     // Créez une instance de MainWindow et montrez-la
@@ -50,3 +50,4 @@ void arrondissement::goToMainWindow()
     // Fermez la fenêtre actuelle (arrondissement)
     this->close();
 }
+*/

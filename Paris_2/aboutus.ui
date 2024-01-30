@@ -6,39 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1092</width>
-    <height>954</height>
+    <width>1688</width>
+    <height>1245</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QListWidget" name="listWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>-10</y>
-      <width>256</width>
-      <height>901</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>0</y>
-      <width>561</width>
-      <height>351</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="onHomeButton">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>860</y>
+      <x>210</x>
+      <y>740</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -50,8 +30,8 @@
    <widget class="QPushButton" name="arrondissementButton">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>860</y>
+      <x>700</x>
+      <y>740</y>
       <width>141</width>
       <height>25</height>
      </rect>
@@ -63,8 +43,8 @@
    <widget class="QPushButton" name="simButton">
     <property name="geometry">
      <rect>
-      <x>678</x>
-      <y>860</y>
+      <x>930</x>
+      <y>740</y>
       <width>131</width>
       <height>25</height>
      </rect>
@@ -73,21 +53,11 @@
      <string>SIMULATION</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>830</x>
-      <y>0</y>
-      <width>261</width>
-      <height>901</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="JOButton">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>860</y>
+      <x>460</x>
+      <y>740</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -102,7 +72,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1092</width>
+     <width>1688</width>
      <height>22</height>
     </rect>
    </property>

@@ -24,6 +24,12 @@ AboutUS::AboutUS(QWidget *parent)
     , ui(new Ui::AboutUS)
 {
     ui->setupUi(this);
+    QPixmap backgroundImage("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/wau.png");
+    backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    QPalette palette;
+    palette.setBrush(QPalette::Window, backgroundImage);
+    ui->centralwidget->setAutoFillBackground(true);
+    ui->centralwidget->setPalette(palette);
     connect(ui->onHomeButton,&QPushButton::clicked, this, &AboutUS::goToMainWindow);
     connect(ui->JOButton, &QPushButton::clicked, this, &AboutUS::on_JOButton_clicked);
     connect(ui->arrondissementButton, &QPushButton::clicked, this, &AboutUS::on_arrondissementButton_clicked);

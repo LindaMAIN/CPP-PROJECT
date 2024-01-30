@@ -5,13 +5,14 @@
 #include "aboutus.h"
 #include <QMessageBox>
 #include "mainwindow.h"
+#include <QDir>
 
 JO::JO(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::JO)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/wjo5.png");
+    QPixmap backgroundImage(QDir::currentPath() +"/images/wjo5.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);
@@ -21,10 +22,10 @@ JO::JO(QWidget *parent)
     QGraphicsScene *siteOlympiqueScene = new QGraphicsScene(this);
     QGraphicsScene *zoneCouleurScene = new QGraphicsScene(this);
 
-    QPixmap siteOlympiqueImage("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/cartejo.png");
+    QPixmap siteOlympiqueImage(QDir::currentPath() +"/images/cartejo.png");
     siteOlympiqueScene->addPixmap(siteOlympiqueImage);
 
-    QPixmap zoneCouleurImage("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/carte_jo1.png");
+    QPixmap zoneCouleurImage(QDir::currentPath() +"/images/carte_jo1.png");
     zoneCouleurScene->addPixmap(zoneCouleurImage);
 
     ui->siteOlympiqueView->setScene(siteOlympiqueScene);

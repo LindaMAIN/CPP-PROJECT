@@ -16,31 +16,41 @@ CONFIG += c++17
 
 SOURCES += \
     aboutus.cpp \
+    activity.cpp \
     arrondissement.cpp \
+    citymodel.cpp \
+    coordinate.cpp \
     customwidget.cpp \
     departement.cpp \
+    entity.cpp \
     jo.cpp \
     main.cpp \
     mainwindow.cpp \
     mygraphicsscene.cpp \
     mypage.cpp \
+    person.cpp \
+    place.cpp \
     secretgame.cpp \
     simul.cpp \
     zone.cpp
 
 HEADERS += \
     aboutus.h \
+    activity.h \
     arrondissement.h \
+    citymodel.h \
+    coordinate.h \
     customwidget.h \
     departement.h \
+    entity.h \
     jo.h \
     mainwindow.h \
     mygraphicscene.h \
     mypage.h \
+    person.h \
+    place.h \
     secretgame.h \
     simul.h \
-    ui_arrondissementswindows.h \
-    ui_zoneswindow.h \
     zone.h
 
 FORMS += \

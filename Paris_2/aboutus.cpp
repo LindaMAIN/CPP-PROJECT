@@ -17,14 +17,14 @@
 #include "arrondissement.h"
 #include "simul.h"
 #include "mainwindow.h"
-
+#include <QDir>
 
 AboutUS::AboutUS(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::AboutUS)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/wau.png");
+    QPixmap backgroundImage(QDir::currentPath() +"/images/wau.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);

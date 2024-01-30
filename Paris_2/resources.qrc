@@ -1,9 +1,31 @@
 <RCC>
-    <qresource prefix="/maps">
-        <file>map.svg</file>
-        <file>map.png</file>
+    <qresource prefix="/images">
+        <file>images/carte_JO.webp</file>
+        <file>images/carte_jo1.png</file>
+        <file>images/cartejo.png</file>
+        <file>images/map_ligne.jpeg</file>
+        <file>images/map.png</file>
+        <file>images/map.svg</file>
+        <file>images/paris-map-1.jpg</file>
+        <file>images/paris.avif</file>
+        <file>images/paris.jpeg</file>
+        <file>images/paris.svg</file>
+        <file>images/w1.png</file>
+        <file>images/warr.png</file>
+        <file>images/wau.png</file>
+        <file>images/wjo.png</file>
+        <file>images/wjo1.png</file>
+        <file>images/wjo2.png</file>
+        <file>images/wjo3.png</file>
+        <file>images/wjo4.png</file>
+        <file>images/wjo5.png</file>
+        <file>images/zone.jpeg</file>
+        <file>images/wsimul.png</file>
     </qresource>
-    <qresource prefix="/">
-        <file>../../../../Downloads/window1.png</file>
+    <qresource prefix="/places">
+        <file>Json/place.json</file>
+    </qresource>
+    <qresource prefix="/videos">
+        <file>videos/paris.mp4</file>
     </qresource>
 </RCC>

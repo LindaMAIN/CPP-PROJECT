@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Place 1",
+        "capacity": 100,
+        "popularity": 80,
+        "activity": "dining"
+    },
+    {
+        "id": 2,
+        "name": "Place 2",
+        "capacity": 200,
+        "popularity": 70,
+        "activity": "sightseeing"
+    },
+    {
+        "id": 3,
+        "name": "Place 3",
+        "capacity": 150,
+        "popularity": 85,
+        "activity": "dining"
+    },
+    {
+        "id": 4,
+        "name": "Place 4",
+        "capacity": 300,
+        "popularity": 90,
+        "activity": "sightseeing"
+    },
+    {
+        "id": 5,
+        "name": "Place 5",
+        "capacity": 250,
+        "popularity": 95,
+        "activity": "dining"
+    }
+]

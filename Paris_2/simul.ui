@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="onHomeButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>110</x>
       <y>720</y>
       <width>89</width>
       <height>25</height>
@@ -30,7 +30,7 @@
    <widget class="QPushButton" name="arrondissementButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>300</x>
       <y>720</y>
       <width>131</width>
       <height>25</height>
@@ -43,7 +43,7 @@
    <widget class="QPushButton" name="simButton">
     <property name="geometry">
      <rect>
-      <x>418</x>
+      <x>518</x>
       <y>720</y>
       <width>91</width>
       <height>25</height>
@@ -56,7 +56,7 @@
    <widget class="QPushButton" name="JOButton">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>740</x>
       <y>720</y>
       <width>89</width>
       <height>25</height>
@@ -69,7 +69,7 @@
    <widget class="QPushButton" name="AboutUsButton">
     <property name="geometry">
      <rect>
-      <x>860</x>
+      <x>960</x>
       <y>720</y>
       <width>89</width>
       <height>25</height>
@@ -77,6 +77,82 @@
     </property>
     <property name="text">
      <string>ABOUT US</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>40</y>
+      <width>391</width>
+      <height>190</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="jSONPathLabel">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>JSON path</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="jSONPathLineEdit"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="numberOfPeopleLabel">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Number of people</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="numberOfPeopleLineEdit"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="jSONComboBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_startSimul">
+       <property name="text">
+        <string>Start simul</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_stepSimul">
+       <property name="text">
+        <string>Advance simul</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_endSimul">
+       <property name="text">
+        <string>End simul</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>40</y>
+      <width>481</width>
+      <height>611</height>
+     </rect>
     </property>
    </widget>
   </widget>

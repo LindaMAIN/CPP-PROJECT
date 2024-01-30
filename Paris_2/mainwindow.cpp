@@ -22,6 +22,7 @@
 #include "jo.h"
 #include "aboutus.h"
 #include <QFile>
+#include <QDir>
 
 
 
@@ -30,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/w1.png");
+    QPixmap backgroundImage(QDir::currentPath()+"/images/w1.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);
@@ -41,8 +42,8 @@ MainWindow::MainWindow(QWidget *parent)
     videoWidget = new QVideoWidget(this);
     connect(ui->playVideoButton, &QPushButton::clicked, this, &MainWindow::on_playVideoButton_clicked);
 
-   scene = new MyGraphicsScene;
-   svgItem = new QGraphicsSvgItem("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/map.svg");
+    scene = new MyGraphicsScene;
+    svgItem = new QGraphicsSvgItem(QDir::currentPath()+"/images/map.svg");
     svgItem->setFlag(QGraphicsItem::ItemIgnoresTransformations);
     scene->addItem(svgItem);
 
@@ -193,6 +194,9 @@ void MainWindow::onLanguageChanged(int)
         qDebug() << "Translated text for 'Welcome to Paris': " << welcomeText;
     }
 }
+
+
+
 void MainWindow::onMediaStatusChanged(QMediaPlayer::MediaStatus status)
 {
     qDebug() << "Media status changed: " << status;
@@ -200,19 +204,21 @@ void MainWindow::onMediaStatusChanged(QMediaPlayer::MediaStatus status)
     if (status == QMediaPlayer::EndOfMedia) {
         qDebug() << "End of media reached. Returning to main window.";
 
-        // Revenir à la fenêtre principale après la fin de la vidéo
         player->stop();
-        setCentralWidget(ui->centralwidget);  // Remplacez "ui->centralwidget" par votre widget principal
-          // Arrêter la lecture de la vidéo
 
-        qDebug() << "Application should be back to main window.";
+        if (ui->centralwidget) {
+            setCentralWidget(ui->centralwidget);
+            qDebug() << "Application should be back to main window.";
+        } else {
+            qDebug() << "Central widget is null.";
+        }
     }
 }
 
 void MainWindow::playVideo()
 {
     // Charger le fichier vidéo (remplacez "your_video_file.mp4" par votre fichier)
-    player->setMedia(QUrl::fromLocalFile("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/paris.mp4"));
+    player->setMedia(QUrl::fromLocalFile(QDir::currentPath()+"/videos/paris.mp4"));
 
     // Afficher le lecteur vidéo
     setCentralWidget(videoWidget);
@@ -249,7 +255,7 @@ void MainWindow::on_btn_Open_And_play_video_clicked()
 
 void MainWindow::on_playVideoButton_clicked()
 {
-    QString videoFilePath = "/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/paris.mp4";
+    QString videoFilePath = QDir::currentPath()+"/videos/paris.mp4";
 
     // Utilisez les membres de la classe plutôt que de créer de nouvelles instances
     player->setVideoOutput(videoWidget);

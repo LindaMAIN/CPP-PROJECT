@@ -7,6 +7,7 @@
 #include "mainwindow.h"
 #include "jo.h"
 #include "simul.h"
+#include <QDir>
 
 arrondissement::arrondissement(QWidget *parent) :
     QMainWindow(parent),
@@ -14,7 +15,7 @@ arrondissement::arrondissement(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QPixmap backgroundImage("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/warr1.png");
+    QPixmap backgroundImage(QDir::currentPath() +"/images/warr1.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);

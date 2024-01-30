@@ -6,41 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1259</width>
-    <height>704</height>
+    <width>1680</width>
+    <height>1004</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>60</y>
-      <width>621</width>
-      <height>361</height>
-     </rect>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Bienvenue à Paris !!!! la capitale mondiale de la culture, de l'histoire et du romantisme. Cette ville emblématique est connue pour ses rues pavées, ses cafés animés, et ses monuments emblématiques qui racontent une histoire vieille de plusieurs siècles.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Dans notre Ville Lumière vous pourrez voir la Tour Eiffel, notre chère dame de fer, le Louvre connue dans le monde entier mais sans oublier notre Arc de Triomphe où vous yeux seront illuminés. &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Paris vous réserve d'autres surprises, suivez nous et vous les découvrirez. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="onHomeButton">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>610</y>
+      <x>350</x>
+      <y>860</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -52,8 +30,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="JOButton">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>610</y>
+      <x>660</x>
+      <y>860</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -65,8 +43,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="simButton">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>610</y>
+      <x>960</x>
+      <y>860</y>
       <width>101</width>
       <height>25</height>
      </rect>
@@ -78,8 +56,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="AboutUSButton">
     <property name="geometry">
      <rect>
-      <x>900</x>
-      <y>610</y>
+      <x>1260</x>
+      <y>850</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -91,10 +69,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>460</y>
+      <x>510</x>
+      <y>720</y>
       <width>161</width>
-      <height>101</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -104,10 +82,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>460</y>
+      <x>770</x>
+      <y>710</y>
       <width>161</width>
-      <height>101</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -117,10 +95,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="pushButton_7">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>460</y>
+      <x>1040</x>
+      <y>710</y>
       <width>161</width>
-      <height>101</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -130,248 +108,261 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>10</y>
-      <width>161</width>
+      <x>60</x>
+      <y>260</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>1er arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_9">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>220</y>
-      <width>161</width>
+      <x>60</x>
+      <y>740</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>8 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>250</y>
-      <width>161</width>
+      <x>60</x>
+      <y>810</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>9 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_11">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>280</y>
-      <width>171</width>
+      <x>60</x>
+      <y>880</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>10 ème arrondissement</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_12">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>310</y>
-      <width>171</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>11 ème arrondissement</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_13">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>340</y>
-      <width>171</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>13 ème arrondissement</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_14">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>370</y>
-      <width>171</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>14 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_16">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>190</y>
-      <width>161</width>
+      <x>60</x>
+      <y>670</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>7 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_17">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>160</y>
-      <width>161</width>
+      <x>60</x>
+      <y>600</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>6 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_18">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>130</y>
-      <width>161</width>
+      <x>60</x>
+      <y>530</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>5 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_19">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>70</y>
-      <width>161</width>
+      <x>60</x>
+      <y>400</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>3 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_20">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>100</y>
-      <width>161</width>
+      <x>60</x>
+      <y>470</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>4 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_21">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>40</y>
-      <width>161</width>
+      <x>60</x>
+      <y>330</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>2 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_28">
+   <widget class="QPushButton" name="pushButton_22">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>400</y>
-      <width>171</width>
+      <x>1600</x>
+      <y>370</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>15 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_29">
+   <widget class="QPushButton" name="pushButton_12">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>430</y>
-      <width>171</width>
+      <x>1600</x>
+      <y>230</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>16 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_30">
+   <widget class="QPushButton" name="pushButton_23">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>460</y>
-      <width>171</width>
+      <x>1600</x>
+      <y>300</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>17 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_31">
+   <widget class="QPushButton" name="pushButton_13">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>540</y>
-      <width>171</width>
+      <x>1600</x>
+      <y>710</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>19 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_32">
+   <widget class="QPushButton" name="pushButton_24">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>1600</x>
+      <y>640</y>
+      <width>81</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Go!!</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_14">
+    <property name="geometry">
+     <rect>
+      <x>1600</x>
+      <y>780</y>
+      <width>81</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Go!!</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_25">
+    <property name="geometry">
+     <rect>
+      <x>1600</x>
       <y>500</y>
-      <width>171</width>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>18 ème arrondissement</string>
+     <string>Go!!</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_33">
+   <widget class="QPushButton" name="pushButton_15">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>570</y>
-      <width>171</width>
+      <x>1600</x>
+      <y>850</y>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>20 ème arrondissement</string>
+     <string>Go!!</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_26">
+    <property name="geometry">
+     <rect>
+      <x>1600</x>
+      <y>570</y>
+      <width>81</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Go!!</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_27">
+    <property name="geometry">
+     <rect>
+      <x>1600</x>
+      <y>440</y>
+      <width>81</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Go!!</string>
     </property>
    </widget>
   </widget>
@@ -380,7 +371,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1259</width>
+     <width>1680</width>
      <height>22</height>
     </rect>
    </property>

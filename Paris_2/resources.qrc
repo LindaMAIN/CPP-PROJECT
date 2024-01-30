@@ -3,4 +3,7 @@
         <file>map.svg</file>
         <file>map.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>../../../../Downloads/window1.png</file>
+    </qresource>
 </RCC>

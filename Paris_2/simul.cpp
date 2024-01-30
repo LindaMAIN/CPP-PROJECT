@@ -2,6 +2,8 @@
 #include "ui_simul.h"
 #include "simul.h"
 #include "jo.h"
+#include "mainwindow.h"
+#include "arrondissement.h"
 
 simul::simul(QWidget *parent)
     : QMainWindow(parent)
@@ -15,6 +17,7 @@ simul::~simul()
     delete ui;
     connect(ui->arrondissementButton, &QPushButton::clicked, this, &simul::on_arrondissementButton_clicked);
     connect(ui->JOButton, &QPushButton::clicked, this, &simul::on_JOButton_clicked);
+    connect(ui->onHomeButton, &QPushButton::clicked, this, &simul::goToMainWindow);
 }
 
 
@@ -28,6 +31,15 @@ void simul::on_JOButton_clicked()
 void simul::on_arrondissementButton_clicked()
 {
     hide();
-    QMainWindow *mainWindow = new QMainWindow(this);
+    arrondissement *arrondissements = new arrondissement(this);
+    arrondissements -> show();
+}
+void simul::goToMainWindow()
+{
+    // Créez une instance de MainWindow et montrez-la
+    MainWindow *mainWindow = new MainWindow();
     mainWindow->show();
+
+    // Fermez la fenêtre actuelle (arrondissement)
+    this->close();
 }

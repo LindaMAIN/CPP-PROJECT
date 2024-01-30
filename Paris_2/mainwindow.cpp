@@ -8,27 +8,41 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include <QGraphicsItem>
+#include <QFileDialog>
+#include <QLineEdit>
 #include <QGraphicsPixmapItem>
 #include <QTranslator>
 #include <QLocale>
 #include <QCoreApplication>
 #include <QDebug>
+#include <QMediaPlayer>
+#include <QVideoWidget>
+#include <QVBoxLayout>
 #include "arrondissement.h"
 #include "jo.h"
 #include "aboutus.h"
+#include <QFile>
+
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
     ui(new Ui::MainWindow)
- //   parisDepartementInfo("Paris", "Description")
 {
     ui->setupUi(this);
+    QPixmap backgroundImage("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/w1.png");
+    backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    QPalette palette;
+    palette.setBrush(QPalette::Window, backgroundImage);
+    ui->centralwidget->setAutoFillBackground(true);
+    ui->centralwidget->setPalette(palette);
 
-    // Créer une scène personnalisée + item svg
+    player = new QMediaPlayer(this);
+    videoWidget = new QVideoWidget(this);
+    connect(ui->playVideoButton, &QPushButton::clicked, this, &MainWindow::on_playVideoButton_clicked);
+
    scene = new MyGraphicsScene;
-   svgItem = new QGraphicsSvgItem("/home/lilyn/Desktop/Paris/map.svg");
-    //svgItem = new QGraphicsSvgItem("paris.svg");
+   svgItem = new QGraphicsSvgItem("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/map.svg");
     svgItem->setFlag(QGraphicsItem::ItemIgnoresTransformations);
     scene->addItem(svgItem);
 
@@ -40,7 +54,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->onHomeButton, &QPushButton::clicked, this, &MainWindow::goToHome);
 
     connect(ui->arrondissementButton, &QPushButton::clicked, this, &MainWindow::on_arrondissementButton_clicked);
-    connect(ui->zonesButton, &QPushButton::clicked, this, &MainWindow::zonesButton);
+    //connect(ui->zonesButton, &QPushButton::clicked, this, &MainWindow::zonesButton);
     connect(ui->AboutUSButton, &QPushButton::clicked, this, &MainWindow::on_AboutUSButton_clicked);
 
     ui->comboBoxLanguage->addItem("English", "en_US");
@@ -49,8 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->comboBoxLanguage->addItem("Arabic", "ar_AR");
     ui->comboBoxLanguage->addItem("Spanish", "es_ES");
     ui->comboBoxLanguage->addItem("German", "de_DE");
-    QString initialText = tr("Bienvenue à Paris, la ville lumière, connue pour son histoire riche, son architecture emblématique et son art incomparable. Nichée sur les rives de la Seine, Paris séduit avec ses célèbres monuments tels que la Tour Eiffel, le Louvre et la cathédrale Notre-Dame. Explorez les charmants arrondissements, dégustez une cuisine exquise et plongez-vous dans la culture artistique de cette métropole captivante.En 2024, Paris accueille fièrement les Jeux Olympiques, un événement mondial célébrant l'unité, l'excellence sportive et la diversité. Les Jeux Olympiques de 2024 promettent des moments inoubliables, mettant en avant l'esprit sportif, l'innovation et l'hospitalité française. Rejoignez-nous pour célébrer cette occasion unique où le monde entier se réunit dans la magnifique capitale française.Que vous soyez passionné de sport, d'histoire ou de culture, Paris a quelque chose à offrir à chacun. Profitez de l'atmosphère électrique des Jeux Olympiques et explorez la magie intemporelle de Paris, une ville qui continue de captiver et d'inspirer.");
-    ui ->labelText->setText(initialText);
+
 
     // Connect the language selection signal to the onLanguageChanged slot
     connect(ui->comboBoxLanguage, QOverload<int>::of(&QComboBox::activated), this, &MainWindow::onLanguageChanged);
@@ -176,10 +189,38 @@ void MainWindow::onLanguageChanged(int)
         // Update the UI to reflect the new language
         ui->retranslateUi(this);
         QString welcomeText = tr("Welcome to Paris");
-        ui->labelText->setText(welcomeText);
         qDebug() << "Loaded translation file: Paris_" + languageCode + ".qm";
         qDebug() << "Translated text for 'Welcome to Paris': " << welcomeText;
     }
+}
+void MainWindow::onMediaStatusChanged(QMediaPlayer::MediaStatus status)
+{
+    qDebug() << "Media status changed: " << status;
+
+    if (status == QMediaPlayer::EndOfMedia) {
+        qDebug() << "End of media reached. Returning to main window.";
+
+        // Revenir à la fenêtre principale après la fin de la vidéo
+        player->stop();
+        setCentralWidget(ui->centralwidget);  // Remplacez "ui->centralwidget" par votre widget principal
+          // Arrêter la lecture de la vidéo
+
+        qDebug() << "Application should be back to main window.";
+    }
+}
+
+void MainWindow::playVideo()
+{
+    // Charger le fichier vidéo (remplacez "your_video_file.mp4" par votre fichier)
+    player->setMedia(QUrl::fromLocalFile("/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/paris.mp4"));
+
+    // Afficher le lecteur vidéo
+    setCentralWidget(videoWidget);
+
+    connect(player, &QMediaPlayer::mediaStatusChanged, this, &MainWindow::onMediaStatusChanged);
+
+    // Lancer la lecture
+    player->play();
 }
 
 void MainWindow::on_zonesButton_clicked()
@@ -188,4 +229,37 @@ void MainWindow::on_zonesButton_clicked()
     zones = new zone(this);
     zones -> show();
 }
+/*
+void MainWindow::on_btn_Open_And_play_video_clicked()
+{
+    QString Filename = QFileDialog::getOpenFileName(this, tr("Select Video File"), "", tr("MP4 Files (*.mp4)"));
 
+    QMediaPlayer *player = new QMediaPlayer();
+    QVideoWidget *video = new QVideoWidget();
+
+    video->setGeometry(20, 20, 640, 480);
+
+    player->setVideoOutput(video);
+    player->setMedia(QUrl::fromLocalFile(Filename));
+
+    video->show();
+    player->play();
+}
+*/
+
+void MainWindow::on_playVideoButton_clicked()
+{
+    QString videoFilePath = "/home/lilyn/Desktop/final/CPP-PROJECT/Paris_2/paris.mp4";
+
+    // Utilisez les membres de la classe plutôt que de créer de nouvelles instances
+    player->setVideoOutput(videoWidget);
+    player->setMedia(QUrl::fromLocalFile(videoFilePath));
+
+    // Afficher le widget vidéo
+    setCentralWidget(videoWidget);
+
+    connect(player, &QMediaPlayer::mediaStatusChanged, this, &MainWindow::onMediaStatusChanged);
+
+    // Lancer la lecture
+    player->play();
+}

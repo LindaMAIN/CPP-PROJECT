@@ -1,4 +1,4 @@
-// mainwindow.h
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -10,7 +10,11 @@
 #include <QGraphicsPixmapItem>
 #include <QTranslator>
 #include <QLocale>
+#include <QLineEdit>
 #include <QCoreApplication>
+#include <QMediaPlayer>
+#include <QVideoWidget>
+#include <QVBoxLayout>
 #include "mygraphicscene.h"
 #include "arrondissement.h"
 #include "jo.h"
@@ -34,6 +38,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    //void onMediaStatusChanged(QMediaPlayer::MediaStatus status);
+    //void playVideo();
 
 public slots:
     void goToHome();
@@ -55,6 +61,9 @@ private:
     AboutUS *ABoutUs;
     simul *simulation;
     zone *zones;
+    QMediaPlayer *player;
+    QVideoWidget *videoWidget;
+    QLineEdit *lineEdit;
 
 
 
@@ -67,7 +76,10 @@ private slots:
     void on_zonesButton_clicked();
     void on_simButton_clicked();
     void onLanguageChanged(int index);
+    void onMediaStatusChanged(QMediaPlayer::MediaStatus status);
+    void playVideo();
 
+    void on_playVideoButton_clicked();
 };
 
 #endif // MAINWINDOW_H

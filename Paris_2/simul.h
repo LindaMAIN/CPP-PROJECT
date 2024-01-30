@@ -24,10 +24,12 @@ class simul : public QMainWindow
 public:
     explicit simul(QWidget *parent = nullptr);
     ~simul();
+
 private slots:
     //void handleArrondissementButton();
     void on_arrondissementButton_clicked();
     void on_JOButton_clicked();
+    void goToMainWindow();
     //void on_AboutUSButton_clicked();
     //void on_zonesButton_clicked();
     //void on_simButton_clicked();

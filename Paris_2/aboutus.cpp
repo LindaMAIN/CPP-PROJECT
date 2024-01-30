@@ -16,6 +16,7 @@
 #include "jo.h"
 #include "arrondissement.h"
 #include "simul.h"
+#include "mainwindow.h"
 
 
 AboutUS::AboutUS(QWidget *parent)
@@ -23,6 +24,7 @@ AboutUS::AboutUS(QWidget *parent)
     , ui(new Ui::AboutUS)
 {
     ui->setupUi(this);
+    connect(ui->onHomeButton,&QPushButton::clicked, this, &AboutUS::goToMainWindow);
     connect(ui->JOButton, &QPushButton::clicked, this, &AboutUS::on_JOButton_clicked);
     connect(ui->arrondissementButton, &QPushButton::clicked, this, &AboutUS::on_arrondissementButton_clicked);
     connect(ui->simButton, &QPushButton::clicked, this, &AboutUS::on_simButton_clicked);
@@ -44,13 +46,21 @@ void AboutUS::on_JOButton_clicked()
 void AboutUS::on_arrondissementButton_clicked()
 {
     hide();
-    QMainWindow *mainWindow = new QMainWindow(this);
-    mainWindow->show();
+    arrondissement *arrondissements = new arrondissement(this);
+    arrondissements -> show();
 }
+
 
 void AboutUS::on_simButton_clicked()
 {
     hide();
     simul *simulation = new simul(this);
     simulation->show();
+}
+
+void AboutUS::goToMainWindow()
+{
+    hide();
+    MainWindow *mainWindow = new MainWindow();
+    mainWindow->show();
 }

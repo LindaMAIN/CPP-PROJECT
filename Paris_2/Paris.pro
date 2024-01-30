@@ -2,6 +2,8 @@ QT       += core gui
 QT       += svg
 QT       += widgets svg
 QT       += widgets
+QT 	 += core gui multimedia
+QT 	 += multimediawidgets
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -22,6 +24,7 @@ SOURCES += \
     mainwindow.cpp \
     mygraphicsscene.cpp \
     mypage.cpp \
+    secretgame.cpp \
     simul.cpp \
     zone.cpp
 
@@ -34,6 +37,7 @@ HEADERS += \
     mainwindow.h \
     mygraphicscene.h \
     mypage.h \
+    secretgame.h \
     simul.h \
     ui_arrondissementswindows.h \
     ui_zoneswindow.h \
@@ -44,6 +48,7 @@ FORMS += \
     arrondissement.ui \
     jo.ui \
     mainwindow.ui \
+    secretgame.ui \
     simul.ui \
     ui_arrondissementswindow.ui \
     ui_zoneswindow.ui \

@@ -22,6 +22,7 @@ class AboutUS : public QMainWindow
 public:
     explicit AboutUS(QWidget *parent = nullptr);
     ~AboutUS();
+    void goToMainWindow();
 private slots:
     void on_JOButton_clicked();
     void on_arrondissementButton_clicked();

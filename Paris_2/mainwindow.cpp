@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage(QDir::currentPath()+"/images/w1.png");
+    QPixmap backgroundImage(QDir::currentPath()+"/images/home.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);

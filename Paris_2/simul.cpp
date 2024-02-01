@@ -4,6 +4,7 @@
 #include "jo.h"
 #include "mainwindow.h"
 #include "arrondissement.h"
+#include "aboutus.h"
 
 #include <QMessageBox>
 #include <QDir>
@@ -24,7 +25,7 @@ simul::simul(QWidget *parent)
     connect(ui->jSONComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(onJsonFileSelected(const QString &)));
 
     //Setup background image
-    QPixmap backgroundImage(QDir::currentPath() +"/images/wsimul.png");
+    QPixmap backgroundImage(QDir::currentPath() +"/images/simuu.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);
@@ -38,6 +39,8 @@ simul::simul(QWidget *parent)
     connect(ui->pushButton_stepSimul, &QPushButton::clicked, this, &simul::oneStepSimulation);
     //End simulation
     connect(ui->pushButton_endSimul, &QPushButton::clicked, this, &simul::endSimulation);
+
+    connect(ui->AboutUsButton, &QPushButton::clicked, this, &simul::on_AboutUSButton_clicked);
 
 }
 
@@ -74,7 +77,12 @@ void simul::goToMainWindow()
     this->close();
 }
 
-
+void simul::on_AboutUSButton_clicked()
+{
+    hide();
+    AboutUS *AboutUs = new AboutUS(this);
+    AboutUs -> show();
+}
 void simul::onJsonFileSelected(const QString &fileName)
 {
     selectedJsonFilePath = ":/places/Json/" + fileName; // Store the file path in the member variable

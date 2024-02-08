@@ -12,7 +12,7 @@ JO::JO(QWidget *parent)
     , ui(new Ui::JO)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage(QDir::currentPath() +"/images/wjo5.png");
+    QPixmap backgroundImage(QDir::currentPath() +"/images/joo.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);

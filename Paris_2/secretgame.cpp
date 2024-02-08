@@ -1,15 +1,25 @@
 #include "secretgame.h"
 #include "ui_secretgame.h"
 #include <QMessageBox>
+#include <QProcess>
 #include "mainwindow.h"
-
+#include <QDir>
+#include <QDebug>
 secretgame::secretgame(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::secretgame)
 {
     ui->setupUi(this);
-    QString imagePath = "/home/lilyn/Downloads/secretgame.png";  // Remplacez cela par le chemin de votre image
-    setStyleSheet("QMainWindow { background-image: url(" + imagePath + "); background-repeat: no-repeat; background-position: center;}");
+    QPixmap backgroundImage(QDir::currentPath()+"/images/games.png");
+    backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    QPalette palette;
+    palette.setBrush(QPalette::Window, backgroundImage);
+    ui->centralwidget->setAutoFillBackground(true);
+    ui->centralwidget->setPalette(palette);
+    connect(ui->onHomeButton, &QPushButton::clicked, this, &secretgame::goToMainWindow);
+    //connect(ui->onGameButton, &QPushButton::clicked, this, &secretgame::on_gameDialogButton_clicked);
+    connect(ui->onGameButton, &QPushButton::clicked, this, &secretgame::onButtonClicked);
+
 }
 
 secretgame::~secretgame()
@@ -17,37 +27,28 @@ secretgame::~secretgame()
     delete ui;
 }
 
+void secretgame::onButtonClicked()
+{
+    QString program = QDir::currentPath()+"/Mario_Qt-Cpp/MarioQt";
+    qDebug()<<program;
+    QStringList arguments;
+    QProcess::startDetached(program, arguments);
+}
+
 void secretgame::showSecretMessage(const QString &message)
 {
     QMessageBox::information(this, "Message Secret", message);
 }
 
-void secretgame::on_okButton_clicked()
+void secretgame::goToMainWindow()
 {
-    static int messageIndex = 0;
-
-    // Liste de messages secrets
-    QStringList secretMessages;
-    secretMessages << "Vous avez débloqué le niveau secret 1."
-                   << "Félicitations pour avoir atteint le niveau secret 2."
-                   << "Vous êtes un explorateur expert !";
-
-    // Afficher le prochain message secret
-    if (messageIndex < secretMessages.size()) {
-        showSecretMessage(secretMessages.at(messageIndex));
-        messageIndex++;
-    } else {
-        close();
-    }
-}
-/*
-void arrondissement::goToMainWindow()
-{
-    // Créez une instance de MainWindow et montrez-la
+   hide();
     MainWindow *mainWindow = new MainWindow();
     mainWindow->show();
 
-    // Fermez la fenêtre actuelle (arrondissement)
-    this->close();
+
 }
-*/
+
+void secretgame::on_gameDialogButton_clicked() {
+    QMessageBox::information(this, tr("Jeu Secret"), tr("Bienvenue dans le jeu secret !"));
+}

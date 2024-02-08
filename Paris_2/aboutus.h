@@ -28,6 +28,8 @@ private slots:
     void on_arrondissementButton_clicked();
     void on_simButton_clicked();
 
+    void on_gameButton_clicked();
+
 private:
     Ui::AboutUS *ui;
 
@@ -35,4 +37,3 @@ private:
 };
 
 #endif // ABOUTUS_H
-

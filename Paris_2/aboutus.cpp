@@ -11,20 +11,23 @@
 #include <QLocale>
 #include <QCoreApplication>
 #include <QDebug>
+#include <QDir>
+
 #include "aboutus.h"
 #include "ui_aboutus.h"
 #include "jo.h"
 #include "arrondissement.h"
 #include "simul.h"
 #include "mainwindow.h"
-#include <QDir>
+#include "secretgame.h"
+
 
 AboutUS::AboutUS(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::AboutUS)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage(QDir::currentPath() +"/images/wau.png");
+    QPixmap backgroundImage(QDir::currentPath()+"/images/aboutus.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);
@@ -34,6 +37,8 @@ AboutUS::AboutUS(QWidget *parent)
     connect(ui->JOButton, &QPushButton::clicked, this, &AboutUS::on_JOButton_clicked);
     connect(ui->arrondissementButton, &QPushButton::clicked, this, &AboutUS::on_arrondissementButton_clicked);
     connect(ui->simButton, &QPushButton::clicked, this, &AboutUS::on_simButton_clicked);
+    connect(ui->gameButton, &QPushButton::clicked, this, &AboutUS::on_gameButton_clicked);
+
 }
 
 
@@ -69,4 +74,11 @@ void AboutUS::goToMainWindow()
     hide();
     MainWindow *mainWindow = new MainWindow();
     mainWindow->show();
+}
+
+void AboutUS::on_gameButton_clicked()
+{
+    hide();
+    secretgame *sg = new secretgame();
+    sg->show();
 }

@@ -15,7 +15,7 @@ arrondissement::arrondissement(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QPixmap backgroundImage(QDir::currentPath() +"/images/warr1.png");
+    QPixmap backgroundImage(QDir::currentPath() +"/images/arrondissement.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);

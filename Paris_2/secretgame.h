@@ -1,4 +1,3 @@
-// secretgame.h
 #ifndef SECRETGAME_H
 #define SECRETGAME_H
 
@@ -17,12 +16,13 @@ public:
     ~secretgame();
     void goToMainWindow();
 
-    // Ajoutez ces déclarations
+
     void showSecretMessage(const QString &message);
 
 private slots:
-    void on_okButton_clicked();
 
+    void on_gameDialogButton_clicked();
+    void onButtonClicked();
 private:
     Ui::secretgame *ui;
 };

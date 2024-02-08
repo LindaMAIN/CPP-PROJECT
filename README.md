@@ -33,3 +33,9 @@ Le projet Paris_2 est une application C++ basée sur Qt, comprenant une simulati
 ## Auteurs
 - Linda TALA
 - Clément ZHUANG
+
+## Co auteur
+- Przemekkkth
+## Outside ressources
+https://github.com/Przemekkkth
+https://github.com/Przemekkkth/Mario_Qt-Cpp

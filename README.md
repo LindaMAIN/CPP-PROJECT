@@ -18,6 +18,12 @@ Le projet Paris_2 est une application C++ basée sur Qt, comprenant une simulati
 ## Installation
 1. Clonez le dépôt : `git clone[https://github.com/LindaMAIN/CPP-PROJECT/Paris_2.git]`
 2. Ouvrez le projet dans Qt Creator ou votre IDE préféré(VScode).
+3. Télécharger une version compatible de Qt. (version 5.15.2 utilisé ici)
+4. Exporter chemin : `export PATH=/path_to_Qt/Qt/5.15.2/gcc_64/bin:$PATH`
+5. Extraire le fichier Mario_Qt-Cpp.zip dans le dossier Mario_Qt-Cpp 
+6. Lancer qmake && make dans le dossier Mario_Qt-Cpp
+7. Lancer qmake && make dans le dossier Paris_2
+8. Lancer l'application avec la commande `./Paris_`
 
 
 ## Utilisation
@@ -29,6 +35,8 @@ Le projet Paris_2 est une application C++ basée sur Qt, comprenant une simulati
   - Contient le code source et les fichiers du projet.
 - **Images/**
   - Stocke les images utilisées dans l'application.
+- **Mario_Qt-Cpp.zip/**
+  - Contient le code source du jeu secret.
 
 ## Auteurs
 - Linda TALA

@@ -16,7 +16,7 @@ Le projet Paris_2 est une application C++ basée sur Qt, comprenant une simulati
 
 
 ## Installation
-1. Clonez le dépôt : `git clone[https://github.com/LindaMAIN/CPP-PROJECT/Paris_2.git]`
+1. Clonez le dépôt : `git clone https://github.com/LindaMAIN/CPP-PROJECT/Paris_2.git`
 2. Ouvrez le projet dans Qt Creator ou votre IDE préféré(VScode).
 3. Télécharger une version compatible de Qt. (version 5.15.2 utilisé ici)
 4. Exporter chemin : `export PATH=/path_to_Qt/Qt/5.15.2/gcc_64/bin:$PATH`

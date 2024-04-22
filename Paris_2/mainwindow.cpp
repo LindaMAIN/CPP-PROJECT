@@ -237,11 +237,11 @@ void MainWindow::on_zonesButton_clicked()
 
 void MainWindow::on_playVideoButton_clicked()
 {
-    QString videoFilePath = ":/videos/videos/paris.mp4";
+    QString videoFilePath = QDir::currentPath()+":/videos/videos/paris.mp4";
 
     // Utilisez les membres de la classe plutôt que de créer de nouvelles instances
     player->setVideoOutput(videoWidget);
-    player->setMedia(QUrl(videoFilePath));
+    player->setMedia(QUrl::fromLocalFile(videoFilePath));
 
     // Afficher le widget vidéo
     setCentralWidget(videoWidget);

@@ -29,11 +29,21 @@ secretgame::~secretgame()
 
 void secretgame::onButtonClicked()
 {
-    QString program = QDir::currentPath()+"/Mario_Qt-Cpp/MarioQt";
-    qDebug()<<program;
+    QString executablePath = QDir(QCoreApplication::applicationDirPath()).filePath("Mario_Qt-Cpp/MarioQt");
+    if (!QFile::exists(executablePath)) {
+        qDebug() << "Executable does not exist:" << executablePath;
+        return;
+    }
+
+    qDebug() << "Launching program:" << executablePath;
     QStringList arguments;
-    QProcess::startDetached(program, arguments);
+    bool launched = QProcess::startDetached(executablePath, arguments);
+
+    if (!launched) {
+        qDebug() << "Failed to launch the executable.";
+    }
 }
+
 
 void secretgame::showSecretMessage(const QString &message)
 {

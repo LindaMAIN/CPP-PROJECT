@@ -20,12 +20,12 @@ Le projet Paris_2 est une application C++ basée sur Qt, comprenant une simulati
 2. Ouvrez le projet dans Qt Creator ou votre IDE préféré(VScode).
 3. Télécharger une version compatible de Qt. (version 5.15.2 utilisé ici)
 4.  Faire : sudo apt install libqt5svg5-dev
-5. Installer : sudo apt install qtmultimedia5-dev
-6. Exporter chemin : `export PATH=/path_to_Qt/Qt/5.15.2/gcc_64/bin:$PATH`
-7. Extraire le fichier Mario_Qt-Cpp.zip dans le dossier Mario_Qt-Cpp 
+5. Installer : sudo apt install qtmultimedia5-dev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
+6. Definir le chemin vers bin de gcc
+7. Exporter chemin : `export PATH=/path_to_Qt/Qt/5.15.2/gcc_64/bin:$PATH`
 8. Lancer qmake && make dans le dossier Paris_2
 9. Lancer qmake && make dans le dossier Mario_Qt-Cpp
-10. Lancer l'application avec la commande `./Paris_`
+10. Lancer l'application avec la commande `./Paris`
 
 
 ## Utilisation

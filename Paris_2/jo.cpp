@@ -12,7 +12,7 @@ JO::JO(QWidget *parent)
     , ui(new Ui::JO)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage(QDir::currentPath() +"/images/joo.png");
+    QPixmap backgroundImage(":/images/images/wjo5.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);
@@ -22,10 +22,10 @@ JO::JO(QWidget *parent)
     QGraphicsScene *siteOlympiqueScene = new QGraphicsScene(this);
     QGraphicsScene *zoneCouleurScene = new QGraphicsScene(this);
 
-    QPixmap siteOlympiqueImage(QDir::currentPath() +"/images/cartejo.png");
+    QPixmap siteOlympiqueImage(":/images/images/cartejo.png");
     siteOlympiqueScene->addPixmap(siteOlympiqueImage);
 
-    QPixmap zoneCouleurImage(QDir::currentPath() +"/images/carte_jo1.png");
+    QPixmap zoneCouleurImage(":/images/images/carte_jo1.png");
     zoneCouleurScene->addPixmap(zoneCouleurImage);
 
     ui->siteOlympiqueView->setScene(siteOlympiqueScene);

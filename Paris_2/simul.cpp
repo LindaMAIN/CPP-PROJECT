@@ -18,14 +18,14 @@ simul::simul(QWidget *parent)
 
 
     //Add some json files to combobox as option for easier use
-    QStringList jsonFiles = {"","place.json"}; // Add more JSON file names here
+    QStringList jsonFiles = {"","place.json"};
     ui->jSONComboBox->addItems(jsonFiles);
 
     // Connect the currentIndexChanged signal to a slot
     connect(ui->jSONComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(onJsonFileSelected(const QString &)));
 
     //Setup background image
-    QPixmap backgroundImage(QDir::currentPath() +"/images/simuu.png");
+    QPixmap backgroundImage(":/images/images/wsimul.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);

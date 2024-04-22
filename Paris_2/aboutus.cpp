@@ -27,7 +27,7 @@ AboutUS::AboutUS(QWidget *parent)
     , ui(new Ui::AboutUS)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage(QDir::currentPath()+"/images/aboutus.png");
+    QPixmap backgroundImage(":/images/images/wau.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);

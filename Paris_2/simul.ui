@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1227</width>
-    <height>794</height>
+    <width>1685</width>
+    <height>1131</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="onHomeButton">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>720</y>
+      <x>800</x>
+      <y>830</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QPushButton" name="arrondissementButton">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>720</y>
+      <x>990</x>
+      <y>830</y>
       <width>131</width>
       <height>25</height>
      </rect>
@@ -43,8 +43,8 @@
    <widget class="QPushButton" name="simButton">
     <property name="geometry">
      <rect>
-      <x>518</x>
-      <y>720</y>
+      <x>1208</x>
+      <y>830</y>
       <width>91</width>
       <height>25</height>
      </rect>
@@ -56,8 +56,8 @@
    <widget class="QPushButton" name="JOButton">
     <property name="geometry">
      <rect>
-      <x>740</x>
-      <y>720</y>
+      <x>1430</x>
+      <y>830</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -69,8 +69,8 @@
    <widget class="QPushButton" name="AboutUsButton">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>720</y>
+      <x>1650</x>
+      <y>830</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -82,8 +82,8 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>40</y>
+      <x>1220</x>
+      <y>220</y>
       <width>391</width>
       <height>190</height>
      </rect>
@@ -148,9 +148,9 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>40</y>
-      <width>481</width>
+      <x>0</x>
+      <y>100</y>
+      <width>591</width>
       <height>611</height>
      </rect>
     </property>
@@ -161,7 +161,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1227</width>
+     <width>1685</width>
      <height>22</height>
     </rect>
    </property>

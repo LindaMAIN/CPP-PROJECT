@@ -21,6 +21,7 @@
         <file>images/wjo5.png</file>
         <file>images/zone.jpeg</file>
         <file>images/wsimul.png</file>
+        <file>images/warr2.png</file>
     </qresource>
     <qresource prefix="/places">
         <file>Json/place.json</file>

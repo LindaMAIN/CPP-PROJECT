@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage(QDir::currentPath()+"/images/home.png");
+    QPixmap backgroundImage(":/images/images/w1.png");
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);
@@ -43,7 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->playVideoButton, &QPushButton::clicked, this, &MainWindow::on_playVideoButton_clicked);
 
     scene = new MyGraphicsScene;
-    svgItem = new QGraphicsSvgItem(QDir::currentPath()+"/images/map.svg");
+    svgItem = new QGraphicsSvgItem(":/images/images/map.svg");
     svgItem->setFlag(QGraphicsItem::ItemIgnoresTransformations);
     scene->addItem(svgItem);
 
@@ -52,14 +52,13 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    connect(ui->onHomeButton, &QPushButton::clicked, this, &MainWindow::goToHome);
-
     connect(ui->arrondissementButton, &QPushButton::clicked, this, &MainWindow::on_arrondissementButton_clicked);
     //connect(ui->zonesButton, &QPushButton::clicked, this, &MainWindow::zonesButton);
     connect(ui->AboutUSButton, &QPushButton::clicked, this, &MainWindow::on_AboutUSButton_clicked);
 
-    ui->comboBoxLanguage->addItem("English", "en_US");
+
     ui->comboBoxLanguage->addItem("French", "fr_FR");
+    ui->comboBoxLanguage->addItem("English", "en_US");
     ui->comboBoxLanguage->addItem("Chinese", "zh_CN");
     ui->comboBoxLanguage->addItem("Arabic", "ar_AR");
     ui->comboBoxLanguage->addItem("Spanish", "es_ES");
@@ -109,7 +108,6 @@ void MainWindow::goToHome()
     fadeOutAnimation->start(QPropertyAnimation::DeleteWhenStopped);
 }
 
-// Add these functions to the MainWindow class in mainwindow.cpp
 
 void MainWindow::arrondissementButton()
 {
@@ -123,12 +121,12 @@ void MainWindow::zonesButton()
 
 void MainWindow::AboutUSButton()
 {
-    QMessageBox::information(this, "About Us", "This is an example application created by You!");
+    QMessageBox::information(this, "About Us", "The creators");
 }
 
 void MainWindow::JOButton()
 {
-    QMessageBox::information(this, "Les sites JO", "This is an example application created by You!");
+    QMessageBox::information(this, "Les sites JO", "JO SITES");
 }
 void MainWindow::handleArrondissementButton()
 {
@@ -217,8 +215,8 @@ void MainWindow::onMediaStatusChanged(QMediaPlayer::MediaStatus status)
 
 void MainWindow::playVideo()
 {
-    // Charger le fichier vidéo (remplacez "your_video_file.mp4" par votre fichier)
-    player->setMedia(QUrl::fromLocalFile(QDir::currentPath()+"/videos/paris.mp4"));
+    player->setMedia(QUrl("qrc:/videos/videos/paris.mp4"));
+
 
     // Afficher le lecteur vidéo
     setCentralWidget(videoWidget);
@@ -235,31 +233,15 @@ void MainWindow::on_zonesButton_clicked()
     zones = new zone(this);
     zones -> show();
 }
-/*
-void MainWindow::on_btn_Open_And_play_video_clicked()
-{
-    QString Filename = QFileDialog::getOpenFileName(this, tr("Select Video File"), "", tr("MP4 Files (*.mp4)"));
 
-    QMediaPlayer *player = new QMediaPlayer();
-    QVideoWidget *video = new QVideoWidget();
-
-    video->setGeometry(20, 20, 640, 480);
-
-    player->setVideoOutput(video);
-    player->setMedia(QUrl::fromLocalFile(Filename));
-
-    video->show();
-    player->play();
-}
-*/
 
 void MainWindow::on_playVideoButton_clicked()
 {
-    QString videoFilePath = QDir::currentPath()+"/videos/paris.mp4";
+    QString videoFilePath = ":/videos/videos/paris.mp4";
 
     // Utilisez les membres de la classe plutôt que de créer de nouvelles instances
     player->setVideoOutput(videoWidget);
-    player->setMedia(QUrl::fromLocalFile(videoFilePath));
+    player->setMedia(QUrl(videoFilePath));
 
     // Afficher le widget vidéo
     setCentralWidget(videoWidget);

@@ -10,7 +10,7 @@ secretgame::secretgame(QWidget *parent)
     , ui(new Ui::secretgame)
 {
     ui->setupUi(this);
-    QPixmap backgroundImage(QDir::currentPath()+"/images/games.png");
+    QPixmap backgroundImage((":/images/images/wau.png"));
     backgroundImage = backgroundImage.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Window, backgroundImage);
